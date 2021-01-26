@@ -5,47 +5,71 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-	int yearOfBirthday = 1984;
-    int monthOfBirthday = 7;
-    int dayOfBirthday = 21;
-    int sum = yearOfBirthday + monthOfBirthday + dayOfBirthday;
-        System.out.println("Сумма моего года, месяца и дня рождения: " + sum);
-
-
-        if (monthOfBirthday > dayOfBirthday) {
-            boolean monthBiggerDay = true;
-            System.out.println("Месяц моего рождения больше даты моего рождения: " + monthBiggerDay);
-                }
-        else {
-            boolean monthBiggerDay = false;
-            System.out.println("Месяц моего рождения больше даты моего рождения: " + monthBiggerDay);
+        int month = 13;
+        if (month == 1 | month == 2 | month ==12) {
+            System.out.println("Зима");
+        }
+        else if (2 < month && month < 6){
+            System.out.println("Весна");
+        }
+        else if (5 < month && month < 9) {
+            System.out.println("Лето");
+        }
+        else if (8 < month && month < 12) {
+            System.out.println("Осень");
+        }
+        else if ( month > 12 | month <= 0){
+            System.out.println("Вы ввели недопустимое значение! Введите номер месяца (от 1 до 12)");
         }
 
+        switch (month){
+            case 12 :
+            case 1:
+            case 2:
+                System.out.println("Зима");
+                break;
+            case 3:
+            case 4:
+            case 5:
+                System.out.println("Весна");
+                break;
+            case 6:
+            case 7:
+            case 8:
+                System.out.println("Лето");
+                break;
+            case 9:
+            case 10:
+            case 11:
+                System.out.println("Осень");
+                break;
+            default:
+                System.out.println("Вы ввели недопустимое значение! Введите номер месяца (от 1 до 12)");
+        }
 
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        for (int i = array.length - 1; i >= 0; i--){
+            System.out.print(array[i] + " ");
 
+        }
         System.out.println(" ");
 
-        char[] name = new char[6];
-        name [0] = 'A';
-        name [1] = 'n';
-        name [2] = 'd';
-        name [3] = 'r';
-        name [4] = 'e';
-        name [5] = 'w';
-
-        System.out.print("Массив с моим именем: ");
-        System.out.print(name);
-
-        System.out.println(" ");
-
-
-        double myAge = 36.0;
-        double partYear = 3.0/12.0;
-        myAge += partYear;
-        System.out.println("Мне " + myAge + " лет");
-
-
-
-
+        int[][] squareArray = new int[2][3];
+        squareArray[0][0] = 1;
+        squareArray[0][1] = 2;
+        squareArray[0][2] = 3;
+        squareArray[1][0] = 6;
+        squareArray[1][1] = 5;
+        squareArray[1][2] = 4;
+        int max = squareArray[0][0];
+        for (int i = 0; i < squareArray.length; i++) {
+            for (int j = 0; j < squareArray[i].length; j++) {
+//                if(squareArray[i][j] > max) {
+//                    max = squareArray[i][j];
+//                }
+                System.out.print(squareArray[i][j] + "[" + i + "][" + j + "]" + " ");
+            }
+            System.out.println(" ");
+        }
     }
 }
